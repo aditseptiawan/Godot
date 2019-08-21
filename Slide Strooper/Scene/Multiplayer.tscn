@@ -1,0 +1,177 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Multiplayer.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/blocxat.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/BLOXAT.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/x1multi.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/x2multi.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/x1multidisabled.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/y1multi.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/y2multi.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/y1multidisabled.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_space = 9
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_space = 8
+font_data = ExtResource( 3 )
+
+[node name="Multiplayer" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BGP2" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 365.0
+
+[node name="ScreenP2" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = -25.0
+margin_right = 360.0
+margin_bottom = 310.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 180, 180 )
+
+[node name="SoalP2" type="Label" parent="ScreenP2"]
+margin_right = 360.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+text = "Yellow"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Margin" type="MarginContainer" parent="ScreenP2"]
+margin_top = 68.0
+margin_right = 360.0
+margin_bottom = 88.0
+custom_constants/margin_bottom = 20
+
+[node name="SkorP2" type="Label" parent="ScreenP2"]
+margin_top = 96.0
+margin_right = 360.0
+margin_bottom = 150.0
+custom_fonts/font = SubResource( 1 )
+text = "Score
+0 vs 0"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Margin2" type="MarginContainer" parent="ScreenP2"]
+margin_top = 158.0
+margin_right = 360.0
+margin_bottom = 178.0
+custom_constants/margin_bottom = 20
+
+[node name="P2" type="HBoxContainer" parent="ScreenP2"]
+margin_top = 186.0
+margin_right = 360.0
+margin_bottom = 292.0
+alignment = 1
+
+[node name="WrongP2" type="TextureButton" parent="ScreenP2/P2"]
+margin_left = 66.0
+margin_right = 176.0
+margin_bottom = 106.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_disabled = ExtResource( 6 )
+
+[node name="CorrectP2" type="TextureButton" parent="ScreenP2/P2"]
+margin_left = 184.0
+margin_right = 294.0
+margin_bottom = 106.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_disabled = ExtResource( 9 )
+
+[node name="Waktu" type="Label" parent="."]
+margin_top = 348.0
+margin_right = 360.0
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 2 )
+text = "xxx"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ScreenP1" type="VBoxContainer" parent="."]
+editor/display_folded = true
+margin_top = 395.0
+margin_right = 360.0
+margin_bottom = 720.0
+
+[node name="SoalP1" type="Label" parent="ScreenP1"]
+margin_right = 360.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+text = "Yellow"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Margin" type="MarginContainer" parent="ScreenP1"]
+margin_top = 68.0
+margin_right = 360.0
+margin_bottom = 88.0
+custom_constants/margin_top = 20
+
+[node name="SkorP1" type="Label" parent="ScreenP1"]
+margin_top = 96.0
+margin_right = 360.0
+margin_bottom = 150.0
+custom_fonts/font = SubResource( 3 )
+text = "Score
+0 vs 0"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Margin2" type="MarginContainer" parent="ScreenP1"]
+margin_top = 158.0
+margin_right = 360.0
+margin_bottom = 178.0
+custom_constants/margin_bottom = 20
+
+[node name="P1" type="HBoxContainer" parent="ScreenP1"]
+margin_top = 186.0
+margin_right = 360.0
+margin_bottom = 292.0
+alignment = 1
+
+[node name="WrongP1" type="TextureButton" parent="ScreenP1/P1"]
+margin_left = 66.0
+margin_right = 176.0
+margin_bottom = 106.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_disabled = ExtResource( 6 )
+
+[node name="CorrectP1" type="TextureButton" parent="ScreenP1/P1"]
+margin_left = 184.0
+margin_right = 294.0
+margin_bottom = 106.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_disabled = ExtResource( 9 )
+
+[node name="Pewaktu" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="PewaktuBG" type="Timer" parent="."]
+[connection signal="timeout" from="Pewaktu" to="." method="_on_Pewaktu_timeout"]
